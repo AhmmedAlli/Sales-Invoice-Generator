@@ -60,12 +60,13 @@ public class LineDialogView extends JDialog{
     public JTextField getItemNameField() {
         return itemNameField;
     }
+    
+    public JTextField getItemPriceField() {
+        return itemPriceField;
+    }
 
     public JTextField getItemCountField() {
         return itemCountField;
     }
 
-    public JTextField getItemPriceField() {
-        return itemPriceField;
-    }
 }

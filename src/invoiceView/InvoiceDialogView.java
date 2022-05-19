@@ -48,13 +48,15 @@ public class InvoiceDialogView extends JDialog {
         pack();
         
     }
+    
+      public JTextField getInvDateField() {
+        return invDateField;
+    }
 
     public JTextField getCustNameField() {
         return custNameField;
     }
 
-    public JTextField getInvDateField() {
-        return invDateField;
-    }
+  
     
 }

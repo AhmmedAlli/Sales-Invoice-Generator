@@ -12,20 +12,22 @@ public class InvoiceHeaderTable extends AbstractTableModel{
         this.invoices = invoices;
     }
     
-    @Override
-    public int getRowCount() {
-        return invoices.size();
-           }
+ @Override
+    public String getColumnName(int column) {
+        return columns[column];
+    }
 
     @Override
     public int getColumnCount() {
         return columns.length;
           }
+    
+        @Override
+    public int getRowCount() {
+        return invoices.size();
+           }
 
-    @Override
-    public String getColumnName(int column) {
-        return columns[column];
-    }
+   
 
     
     

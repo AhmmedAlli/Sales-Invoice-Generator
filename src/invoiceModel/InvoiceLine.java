@@ -28,9 +28,7 @@ package invoiceModel;
 
   
 
-    public String getItemName() {
-        return itemName;
-    }
+   
 
     public double getPrice() {
         return price;
@@ -38,6 +36,10 @@ package invoiceModel;
 
     public void setInvoice(InvoiceHeader invoice) {
         this.invoice = invoice;
+    }
+    
+     public String getItemName() {
+        return itemName;
     }
 
     public void setCount(int count) {

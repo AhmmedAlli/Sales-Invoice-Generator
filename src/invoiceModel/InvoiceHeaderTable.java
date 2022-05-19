@@ -12,7 +12,7 @@ public class InvoiceHeaderTable extends AbstractTableModel{
         this.invoices = invoices;
     }
     
- @Override
+    @Override
     public String getColumnName(int column) {
         return columns[column];
     }
@@ -22,7 +22,7 @@ public class InvoiceHeaderTable extends AbstractTableModel{
         return columns.length;
           }
     
-        @Override
+    @Override
     public int getRowCount() {
         return invoices.size();
            }
@@ -46,8 +46,6 @@ public class InvoiceHeaderTable extends AbstractTableModel{
         }
        
         
-         }
-
-
-    
+    }
+   
 }

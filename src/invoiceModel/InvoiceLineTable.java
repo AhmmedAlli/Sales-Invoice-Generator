@@ -49,7 +49,6 @@ public class InvoiceLineTable extends AbstractTableModel{
     public ArrayList<InvoiceLine> getLines() {
         return lines;
     }
-    
-    
+  
     
 }

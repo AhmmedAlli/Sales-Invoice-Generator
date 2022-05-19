@@ -19,39 +19,39 @@ public class LineDialogView extends JDialog{
     private JTextField itemNameField;
     private JTextField itemCountField;
     private JTextField itemPriceField;
-    private JLabel itemNameLbl;
-    private JLabel itemCountLbl;
-    private JLabel itemPriceLbl;
-    private JButton okBtn;
+    private JLabel itemNameLable;
+    private JLabel itemCountLable;
+    private JLabel itemPriceLable;
+    private JButton createBtn;
     private JButton cancelBtn;
     
     public LineDialogView(InvoiceFrame frame) {
         itemNameField = new JTextField(20);
-        itemNameLbl = new JLabel("Item Name");
+        itemNameLable = new JLabel("Item Name");
         
         itemCountField = new JTextField(20);
-        itemCountLbl = new JLabel("Item Count");
+        itemCountLable = new JLabel("Item Count");
         
         itemPriceField = new JTextField(20);
-        itemPriceLbl = new JLabel("Item Price");
+        itemPriceLable = new JLabel("Item Price");
         
-        okBtn = new JButton("OK");
+        createBtn = new JButton("OK");
         cancelBtn = new JButton("Cancel");
         
-        okBtn.setActionCommand("lineCreatedOk");
+        createBtn.setActionCommand("lineCreatedOk");
         cancelBtn.setActionCommand("lineCanceld");
         
-        okBtn.addActionListener(frame.getController());
+        createBtn.addActionListener(frame.getController());
         cancelBtn.addActionListener(frame.getController());
         setLayout(new GridLayout(4, 2));
         
-        add(itemNameLbl);
+        add(itemNameLable);
         add(itemNameField);
-        add(itemCountLbl);
+        add(itemCountLable);
         add(itemCountField);
-        add(itemPriceLbl);
+        add(itemPriceLable);
         add(itemPriceField);
-        add(okBtn);
+        add(createBtn);
         add(cancelBtn);
         
         pack();

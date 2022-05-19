@@ -16,45 +16,45 @@ import javax.swing.JTextField;
  * @author DELL
  */
 public class InvoiceDialogView extends JDialog {
-    private JTextField custNameField;
-    private JTextField invDateField;
-    private JLabel custNameLbl;
-    private JLabel invDateLbl;
-    private JButton okBtn;
+    private JTextField customerNameField;
+    private JTextField invoiceDataField;
+    private JLabel customerNameLable;
+    private JLabel invoiceDataLable;
+    private JButton createBtn;
     private JButton cancelBtn;
 
     public InvoiceDialogView(InvoiceFrame frame) {
-        custNameLbl = new JLabel("Customer Name:");
-        custNameField = new JTextField(20);
-        invDateLbl = new JLabel("Invoice Date:");
-        invDateField = new JTextField(20);
-        okBtn = new JButton("OK");
+        customerNameLable = new JLabel("Customer Name:");
+        customerNameField = new JTextField(20);
+        invoiceDataLable = new JLabel("Invoice Date:");
+        invoiceDataField = new JTextField(20);
+        createBtn = new JButton("OK");
         cancelBtn = new JButton("Cancel");
         
-        okBtn.setActionCommand("invoiceCreatedOk");
+        createBtn.setActionCommand("invoiceCreatedOk");
         cancelBtn.setActionCommand("invoiceCanceld");
         
-        okBtn.addActionListener(frame.getController());
+        createBtn.addActionListener(frame.getController());
         cancelBtn.addActionListener(frame.getController());
         setLayout(new GridLayout(3, 2));
         
-        add(invDateLbl);
-        add(invDateField);
-        add(custNameLbl);
-        add(custNameField);
-        add(okBtn);
+        add(invoiceDataLable);
+        add(invoiceDataField);
+        add(customerNameLable);
+        add(customerNameField);
+        add(createBtn);
         add(cancelBtn);
         
         pack();
         
     }
     
-      public JTextField getInvDateField() {
-        return invDateField;
+      public JTextField getInvoiceDataField() {
+        return invoiceDataField;
     }
 
-    public JTextField getCustNameField() {
-        return custNameField;
+    public JTextField getCustomerNameField() {
+        return customerNameField;
     }
 
   

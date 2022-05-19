@@ -292,7 +292,4 @@ public class ControllerClass implements ActionListener , ListSelectionListener {
               
     }
 
-
-
-
 }

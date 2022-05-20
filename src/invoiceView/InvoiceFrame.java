@@ -363,7 +363,7 @@ public class InvoiceFrame extends javax.swing.JFrame {
     private ArrayList<InvoiceHeader> invoices ;
     private ControllerClass controller = new ControllerClass(this);
     private InvoiceHeaderTable invoiceTableModel ;
-    
+   
 
     
     

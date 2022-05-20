@@ -26,6 +26,8 @@ public class ControllerClass implements ActionListener , ListSelectionListener {
     private InvoiceDialogView invoiceDialog;
     private LineDialogView lineDialog;
     
+    
+    
     public ControllerClass (InvoiceFrame frame)
     {
     this.frame = frame;

@@ -1,20 +1,14 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package invoiceView;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-/**
- *
- * @author DELL
- */
+
 public class InvoiceDialogView extends JDialog {
     private JTextField customerNameField;
     private JTextField invoiceDataField;
@@ -31,8 +25,14 @@ public class InvoiceDialogView extends JDialog {
         createBtn = new JButton("OK");
         cancelBtn = new JButton("Cancel");
         
+        
+        
         createBtn.setActionCommand("invoiceCreatedOk");
         cancelBtn.setActionCommand("invoiceCanceld");
+        
+        createBtn.setBackground(Color.green);
+        cancelBtn.setBackground(Color.red);
+        
         
         createBtn.addActionListener(frame.getController());
         cancelBtn.addActionListener(frame.getController());

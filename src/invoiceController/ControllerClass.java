@@ -17,6 +17,7 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.JTextField;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
@@ -83,16 +84,16 @@ public class ControllerClass implements ActionListener , ListSelectionListener {
     public void valueChanged(ListSelectionEvent e) {
         int selectedIndex = frame.getInvoiceTable().getSelectedRow();
         if(selectedIndex != -1) {
-        System.out.println("you have selected row: " + selectedIndex );
-        InvoiceHeader invoiceUse = frame.getInvoices().get(selectedIndex);
-        frame.getInvoiceNum().setText(""+invoiceUse.getNumber());
-        frame.getInvoiceDate().setText(invoiceUse.getDate());
-        frame.getCustomerName().setText(invoiceUse.getName());
-        frame.getInvoiceTotalCost().setText(""+invoiceUse.getTotalInvoice());
-        
-        InvoiceLineTable linesTableModel = new InvoiceLineTable(invoiceUse.getLines());
-        frame.getTableLine().setModel(linesTableModel);
-        linesTableModel.fireTableDataChanged();
+            System.out.println("you have selected row: " + selectedIndex );
+            InvoiceHeader invoiceUse = frame.getInvoices().get(selectedIndex);
+            frame.getInvoiceNum().setText(""+invoiceUse.getNumber());
+            frame.getInvoiceDate().setText(invoiceUse.getDate());
+            frame.getCustomerName().setText(invoiceUse.getName());
+            frame.getInvoiceTotalCost().setText(""+invoiceUse.getTotalInvoice());
+
+            InvoiceLineTable linesTableModel = new InvoiceLineTable(invoiceUse.getLines());
+            frame.getTableLine().setModel(linesTableModel);
+            linesTableModel.fireTableDataChanged();
         }
     }
     
@@ -249,10 +250,12 @@ public class ControllerClass implements ActionListener , ListSelectionListener {
         String firstLetter = invoiceDialog.getCustomerNameField().getText().substring(0, 1);
         String remainingLetters = invoiceDialog.getCustomerNameField().getText().substring(1, invoiceDialog.getCustomerNameField().getText().length());
         customerName = firstLetter.toUpperCase() + remainingLetters;
-        
+        String msg = "Invoice Created Successfully";
+        String filled = "Invoices Is Empty";
         InvoiceHeader newInvoice  = new InvoiceHeader(number, date, customerName);
-        frame.getInvoices().add(newInvoice);
-       
+        
+        frame.getInvoices().add(newInvoice);  
+        JOptionPane.showMessageDialog(frame, msg,"Status",JOptionPane.INFORMATION_MESSAGE);   
         frame.getInvoiceTableModel().fireTableDataChanged();
         
         invoiceDialog.setVisible(false);
@@ -282,13 +285,16 @@ public class ControllerClass implements ActionListener , ListSelectionListener {
         double price = Double.parseDouble(itemPrice);
         int selectedInvoiceNumber = frame.getInvoiceTable().getSelectedRow();
             if (selectedInvoiceNumber != -1) {
+                    String msg = "Item Added Successfully";
                     InvoiceHeader invoice = frame.getInvoices().get(selectedInvoiceNumber);
                     InvoiceLine line = new InvoiceLine(itemName, price, count, invoice);
+
+                    JOptionPane.showMessageDialog(frame, msg,"Status",JOptionPane.INFORMATION_MESSAGE);
                     InvoiceLineTable lineTable = (InvoiceLineTable) frame.getTableLine().getModel();
                     lineTable.getLines().add(line);
                     lineTable.fireTableDataChanged();
                     frame.getInvoiceTableModel().fireTableDataChanged();
-
+                    
         }
         
         lineDialog.setVisible(false);

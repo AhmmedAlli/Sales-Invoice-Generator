@@ -9,6 +9,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 
+
 public class InvoiceDialogView extends JDialog {
     private JTextField customerNameField;
     private JTextField invoiceDataField;
@@ -16,6 +17,7 @@ public class InvoiceDialogView extends JDialog {
     private JLabel invoiceDataLable;
     private JButton createBtn;
     private JButton cancelBtn;
+
 
     public InvoiceDialogView(InvoiceFrame frame) {
         customerNameLable = new JLabel("Customer Name:");
@@ -26,14 +28,22 @@ public class InvoiceDialogView extends JDialog {
         cancelBtn = new JButton("Cancel");
         
         
-        
+        // set acction command text
         createBtn.setActionCommand("invoiceCreatedOk");
         cancelBtn.setActionCommand("invoiceCanceld");
         
+        // set color to buttons
         createBtn.setBackground(Color.green);
         cancelBtn.setBackground(Color.red);
         
+        // For Know how form of enter date
+        invoiceDataField.setText("10-01-2010");
         
+         
+  
+        
+        
+        // but controller as a acction listener 
         createBtn.addActionListener(frame.getController());
         cancelBtn.addActionListener(frame.getController());
         setLayout(new GridLayout(3, 2));

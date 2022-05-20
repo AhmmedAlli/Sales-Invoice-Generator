@@ -242,12 +242,17 @@ public class ControllerClass implements ActionListener , ListSelectionListener {
   //Method for adding process an item to an invoice
     private void invoiceCreatedOk() {
         String date = invoiceDialog.getInvoiceDataField().getText();
-        String customerName = invoiceDialog.getCustomerNameField().getText();
+        String customerName ;
         int number = frame.getNextInvoiceNumber();
+        String firstLetter = invoiceDialog.getCustomerNameField().getText().substring(0, 1);
+        String remainingLetters = invoiceDialog.getCustomerNameField().getText().substring(1, invoiceDialog.getCustomerNameField().getText().length());
+        customerName = firstLetter.toUpperCase() + remainingLetters;
         
         InvoiceHeader newInvoice  = new InvoiceHeader(number, date, customerName);
         frame.getInvoices().add(newInvoice);
+       
         frame.getInvoiceTableModel().fireTableDataChanged();
+        
         invoiceDialog.setVisible(false);
         invoiceDialog.dispose();
         invoiceDialog = null ;

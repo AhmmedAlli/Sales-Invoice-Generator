@@ -325,7 +325,11 @@ public class InvoiceFrame extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                 new InvoiceFrame().setVisible(true);
+           InvoiceFrame invoiceF   =   new InvoiceFrame();
+           invoiceF.setVisible(true);
+           invoiceF.setLocation(320, 100);
+                
+                 
                  
             }
         });

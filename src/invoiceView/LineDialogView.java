@@ -19,13 +19,13 @@ public class LineDialogView extends JDialog{
     
     public LineDialogView(InvoiceFrame frame) {
         itemNameField = new JTextField(20);
-        itemNameLable = new JLabel("Item Name");
+        itemNameLable = new JLabel("Item_Name");
         
         itemCountField = new JTextField(20);
-        itemCountLable = new JLabel("Item Count");
+        itemCountLable = new JLabel("Item_Count");
         
         itemPriceField = new JTextField(20);
-        itemPriceLable = new JLabel("Item Price");
+        itemPriceLable = new JLabel("Item_Price");
         
         createBtn = new JButton("OK");
         cancelBtn = new JButton("Cancel");

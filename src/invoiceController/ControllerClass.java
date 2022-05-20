@@ -205,6 +205,7 @@ public class ControllerClass implements ActionListener , ListSelectionListener {
     //Method for creating dialog to make user to create new invoice
     private void createNewInvoice() {
                 invoiceDialog = new InvoiceDialogView(frame);
+                invoiceDialog.setLocation(630,300);
                 invoiceDialog.setVisible(true);
                 System.out.println("hi ahmed");
           }
@@ -221,6 +222,7 @@ public class ControllerClass implements ActionListener , ListSelectionListener {
      //Method for show adding an item to an invoice dialog
     private void createNewItem() {
             lineDialog = new LineDialogView(frame);
+            lineDialog.setLocation(625,300);
             lineDialog.setVisible(true);
 
           }
@@ -271,6 +273,10 @@ public class ControllerClass implements ActionListener , ListSelectionListener {
         String itemName = lineDialog.getItemNameField().getText();
         String countItem = lineDialog.getItemCountField().getText();
         String itemPrice = lineDialog.getItemPriceField().getText();
+        String firstLetter = lineDialog.getItemNameField().getText().substring(0, 1);
+        String remainingLetters = lineDialog.getItemNameField().getText().substring(1, lineDialog.getItemNameField().getText().length());
+        itemName = firstLetter.toUpperCase() + remainingLetters ;
+        
         
         int count = Integer.parseInt(countItem);
         double price = Double.parseDouble(itemPrice);

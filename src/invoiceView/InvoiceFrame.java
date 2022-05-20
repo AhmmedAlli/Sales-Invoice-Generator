@@ -9,8 +9,10 @@ import invoiceController.ControllerClass;
 import invoiceModel.InvoiceHeader;
 import invoiceModel.InvoiceHeaderTable;
 import invoiceModel.InvoiceLineTable;
+import java.awt.Color;
 import java.util.ArrayList;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JTable;
 
 /**
@@ -77,7 +79,6 @@ public class InvoiceFrame extends javax.swing.JFrame {
         jMenuBar2.add(jMenu4);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMaximumSize(new java.awt.Dimension(1150, 1150));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 153, 255), 2));
         jPanel1.setMaximumSize(new java.awt.Dimension(1150, 1150));
@@ -328,9 +329,8 @@ public class InvoiceFrame extends javax.swing.JFrame {
            InvoiceFrame invoiceF   =   new InvoiceFrame();
            invoiceF.setVisible(true);
            invoiceF.setLocation(320, 100);
-                
-                 
-                 
+           
+               
             }
         });
     }
@@ -449,5 +449,6 @@ public class InvoiceFrame extends javax.swing.JFrame {
      return number ;
      
     }
+
 
 }
